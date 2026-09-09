@@ -402,12 +402,12 @@ body[data-lang="en"] .zh { display:none !important; }
         </div>
       </div>
       <form class="contact-form" onsubmit="return false;">
-        <div class="fg"><label class="flabel"><span class="ja">会社名</span><span class="zh">公司名稱</span><span class="en">Company</span><span>*</span></label><input type="text" class="finput" placeholder="例：株式会社〇〇"></div>
+        <div class="fg"><label class="flabel"><span class="ja">会社名</span><span class="zh">公司名稱</span><span class="en">Company</span><span>*</span></label><input type="text" class="finput" data-ph-ja="例：株式会社〇〇" data-ph-zh="例：風神匠股份有限公司" data-ph-en="e.g. Fujin Takumi Co., Ltd." placeholder="例：株式会社〇〇"></div>
         <div class="fg-row">
-          <div class="fg"><label class="flabel"><span class="ja">担当者名</span><span class="zh">聯絡人</span><span class="en">Name</span><span>*</span></label><input type="text" class="finput" placeholder="例：山田 太郎"></div>
-          <div class="fg"><label class="flabel"><span class="ja">電話番号</span><span class="zh">電話</span><span class="en">Phone</span><span>*</span></label><input type="tel" class="finput" placeholder="例：03-1234-5678"></div>
+          <div class="fg"><label class="flabel"><span class="ja">担当者名</span><span class="zh">聯絡人</span><span class="en">Name</span><span>*</span></label><input type="text" class="finput" data-ph-ja="例：山田 太郎" data-ph-zh="例：王 大明" data-ph-en="e.g. John Smith" placeholder="例：山田 太郎"></div>
+          <div class="fg"><label class="flabel"><span class="ja">電話番号</span><span class="zh">電話</span><span class="en">Phone</span><span>*</span></label><input type="tel" class="finput" data-ph-ja="例：03-1234-5678" data-ph-zh="例：02-1234-5678" data-ph-en="e.g. +886-2-1234-5678" placeholder="例：03-1234-5678"></div>
         </div>
-        <div class="fg"><label class="flabel">メールアドレス<span>*</span></label><input type="email" class="finput" placeholder="例：info@example.com"></div>
+        <div class="fg"><label class="flabel">メールアドレス<span>*</span></label><input type="email" class="finput" data-ph-ja="e.g. info@example.com" data-ph-zh="例：info@example.com" data-ph-en="e.g. info@example.com" placeholder="例：info@example.com"></div>
         <div class="form-divider"></div>
         <div class="fg">
           <label class="flabel"><span class="ja">業態</span><span class="zh">業態</span><span class="en">Business Type</span><span>*</span></label>
@@ -429,7 +429,7 @@ body[data-lang="en"] .zh { display:none !important; }
           </div>
         </div>
         <div class="form-divider"></div>
-        <div class="fg"><label class="flabel"><span class="ja">自由記入欄</span><span class="zh">備注</span><span class="en">Message</span></label><textarea class="ftarea" placeholder="ご質問・ご要望などをご自由にお書きください"></textarea></div>
+        <div class="fg"><label class="flabel"><span class="ja">自由記入欄</span><span class="zh">備注</span><span class="en">Message</span></label><textarea class="ftarea" data-ph-ja="ご質問・ご要望などをご自由にお書きください" data-ph-zh="請填寫您的問題或需求" data-ph-en="Please enter your message here" placeholder="ご質問・ご要望などをご自由にお書きください"></textarea></div>
         <button type="submit" class="submit-btn"><span class="ja">送　信</span><span class="zh">送　出</span><span class="en">Send</span></button>
       </form>
     </div>
@@ -468,6 +468,11 @@ function setLang(lang, btn) {
 
   // html要素のlang属性を更新
   document.documentElement.lang = lang === 'ja' ? 'ja' : lang === 'zh' ? 'zh-TW' : 'en';
+
+  // プレースホルダーを切替
+  document.querySelectorAll('[data-ph-'+lang+']').forEach(el => {
+    el.placeholder = el.getAttribute('data-ph-'+lang);
+  });
 }
 </script>
 </body>
