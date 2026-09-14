@@ -116,12 +116,10 @@ footer{background:var(--surface);border-top:.5px solid var(--gold-d);padding:40p
 }
 
 /* LANG */
-body[data-lang="ja"] .zh,body[data-lang="ja"] .en{display:none!important;}
-body[data-lang="zh"] .ja,body[data-lang="zh"] .en{display:none!important;}
-body[data-lang="en"] .ja,body[data-lang="en"] .zh{display:none!important;}
+/* 言語切替はJSで管理 */
 </style>
 </head>
-<body data-lang="ja">
+<body>
 
 <nav>
   <a href="./index.html" class="nav-back ja">メインページへ</a>
@@ -308,13 +306,33 @@ Black Wagyu</h1>
 </footer>
 
 <script>
-function setLang(lang,btn){
-  document.body.dataset.lang=lang;
-  document.querySelectorAll('.lang-btn').forEach(b=>{b.style.background='transparent';b.style.color='var(--td)';b.style.fontWeight='300';});
-  btn.style.background='var(--gold)';btn.style.color='var(--bg)';btn.style.fontWeight='500';
-  document.documentElement.lang=lang==='ja'?'ja':lang==='zh'?'zh-TW':'en';
-  document.querySelectorAll('[data-ph-'+lang+']').forEach(el=>{el.placeholder=el.getAttribute('data-ph-'+lang);});
+// 言語ごとに要素を直接表示/非表示で制御（確実な方式）
+function setLang(lang, btn) {
+  // 全言語要素を一旦非表示
+  document.querySelectorAll('.ja,.zh,.en').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  // 選択言語のみ表示
+  document.querySelectorAll('.' + lang).forEach(function(el) {
+    el.style.display = '';
+  });
+  // ボタンのスタイル更新
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.style.background = 'transparent';
+    b.style.color = 'var(--td)';
+    b.style.fontWeight = '300';
+  });
+  btn.style.background = 'var(--gold)';
+  btn.style.color = 'var(--bg)';
+  btn.style.fontWeight = '500';
 }
+
+// ページ読み込み時：日本語以外を非表示
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.zh,.en').forEach(function(el) {
+    el.style.display = 'none';
+  });
+});
 </script>
 </body>
 </html>
