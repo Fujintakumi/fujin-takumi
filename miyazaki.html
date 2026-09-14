@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮崎牛 | 風神匠股份有限公司</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1A30;--surface:#0F2244;--surface2:#162A54;
+  --gold:#D4C5A0;--gold-b:#EAD8B0;--gold-d:rgba(212,197,160,0.18);
+  --text:#F0E8D8;--td:#A89880;--nav:rgba(11,26,48,0.93);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Serif JP',Georgia,serif;font-weight:300;line-height:1.85;overflow-x:hidden;}
+img{display:block;width:100%;height:100%;object-fit:cover;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdrop-filter:blur(14px);border-bottom:.5px solid var(--gold-d);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;}
+.nav-back{color:var(--gold);font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:2px;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.nav-back::before{content:'←';font-size:14px;}
+.nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gold);letter-spacing:3px;}
+.lang-toggle{display:flex;border:.5px solid var(--gold-d);border-radius:20px;overflow:hidden;}
+.lang-btn{padding:4px 12px;font-size:11px;font-family:'Noto Sans JP',sans-serif;cursor:pointer;background:transparent;color:var(--td);border:none;letter-spacing:1px;transition:all .2s;}
+.lang-btn.on{background:var(--gold);color:var(--bg);font-weight:500;}
+
+/* HERO */
+.hero{height:100vh;position:relative;overflow:hidden;}
+.hero-img{position:absolute;inset:0;object-fit:cover;object-position:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,26,48,0.88) 45%,rgba(11,26,48,0.4) 100%);}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 80px;max-width:700px;}
+.hero-tag{font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:20px;}
+.hero-title{font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.2;letter-spacing:3px;margin-bottom:20px;}
+.hero-sub{font-family:'Noto Sans JP',sans-serif;font-size:15px;color:var(--td);line-height:2;max-width:480px;margin-bottom:36px;}
+.hero-stats{display:flex;gap:40px;}
+.stat{text-align:center;}
+.stat-num{font-size:36px;font-weight:300;color:var(--gold);letter-spacing:-1px;line-height:1;}
+.stat-label{font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:2px;color:var(--td);margin-top:6px;}
+
+/* SECTION */
+.section{padding:88px 40px;}
+.container{max-width:1080px;margin:0 auto;}
+.sec-label{font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.sec-label::before{content:'';width:24px;height:.5px;background:var(--gold);}
+.sec-title{font-size:clamp(22px,3vw,36px);font-weight:300;letter-spacing:2px;margin-bottom:14px;line-height:1.4;}
+.gold-line{width:44px;height:.5px;background:var(--gold);margin-bottom:36px;}
+
+/* FAME */
+.fame-bg{background:var(--surface);}
+.fame-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+.fame-stat{background:var(--bg);padding:40px 32px;border:.5px solid var(--gold-d);}
+.fame-stat-num{font-size:52px;font-weight:300;color:var(--gold);letter-spacing:-2px;line-height:1;margin-bottom:8px;}
+.fame-stat-label{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--td);line-height:1.9;}
+.fame-text{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;font-weight:300;line-height:2.2;color:var(--td);margin-top:40px;}
+
+/* FEATURE */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
+.feature-card{background:var(--surface);padding:36px 28px;border:.5px solid var(--gold-d);}
+.feature-icon{font-size:28px;margin-bottom:16px;}
+.feature-title{font-size:16px;font-weight:400;color:var(--gold);letter-spacing:1px;margin-bottom:12px;}
+.feature-desc{font-family:'Noto Sans JP',sans-serif;font-size:13.5px;font-weight:300;line-height:2;color:var(--td);}
+
+/* MARBLING IMG */
+.marbling-wrap{margin-top:40px;height:400px;overflow:hidden;border:.5px solid var(--gold-d);}
+
+/* BMS */
+.bms-bg{background:var(--surface);}
+.bms-wrap{margin-top:40px;border:.5px solid var(--gold-d);overflow:hidden;}
+.bms-wrap img{height:320px;object-fit:cover;}
+.bms-note{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--td);margin-top:20px;line-height:2;text-align:center;}
+.bms-highlight{color:var(--gold);font-size:18px;font-weight:400;}
+
+/* CUTS */
+.cuts-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:start;}
+.cut-img-wrap{height:420px;border:.5px solid var(--gold-d);overflow:hidden;}
+.cuts-list{display:flex;flex-direction:column;gap:20px;}
+.cut-item{padding:20px 24px;background:var(--surface);border:.5px solid var(--gold-d);border-left:2px solid var(--gold);}
+.cut-name{font-size:16px;font-weight:400;letter-spacing:1px;margin-bottom:8px;}
+.cut-desc{font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:300;line-height:1.9;color:var(--td);}
+
+/* COOKED */
+.cooked-wrap{margin-top:40px;height:480px;border:.5px solid var(--gold-d);overflow:hidden;}
+
+/* LANDSCAPE */
+.landscape-bg{background:var(--surface);}
+.landscape-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+.landscape-img{height:340px;overflow:hidden;border:.5px solid var(--gold-d);}
+
+/* CTA */
+.cta-bg{background:var(--surface);}
+.cta-inner{text-align:center;padding:60px 0;}
+.btn-primary{display:inline-block;padding:16px 52px;background:var(--gold);color:var(--bg);font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:3px;text-decoration:none;font-weight:400;transition:opacity .2s;}
+.btn-primary:hover{opacity:.82;}
+.btn-ghost{display:inline-block;padding:15px 52px;border:.5px solid var(--gold-b);color:var(--gold-b);font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:3px;text-decoration:none;margin-left:16px;transition:all .2s;}
+.cta-text{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;color:var(--td);margin-bottom:36px;line-height:2;}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:.5px solid var(--gold-d);padding:40px;display:flex;justify-content:space-between;align-items:center;}
+.footer-logo{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--gold);letter-spacing:3px;opacity:.7;}
+.footer-copy{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--td);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 18px;}
+  .hero-content{padding:0 24px;}
+  .hero-title{font-size:clamp(28px,8vw,44px);}
+  .hero-stats{gap:20px;}
+  .stat-num{font-size:28px;}
+  .section{padding:56px 18px;}
+  .fame-grid,.cuts-grid,.landscape-grid,.feature-grid{grid-template-columns:1fr;}
+  .marbling-wrap,.cooked-wrap{height:240px;}
+  .cut-img-wrap{height:260px;}
+  .landscape-img{height:220px;}
+  .bms-wrap img{height:180px;}
+  footer{flex-direction:column;gap:12px;text-align:center;}
+}
+
+/* LANG */
+body[data-lang="ja"] .zh,.body[data-lang="ja"] .en{display:none!important;}
+body[data-lang="zh"] .ja,.body[data-lang="zh"] .en{display:none!important;}
+body[data-lang="en"] .ja,.body[data-lang="en"] .zh{display:none!important;}
+</style>
+</head>
+<body data-lang="ja">
+
+<nav>
+  <a href="./index.html" class="nav-back ja">メインページへ</a>
+  <a href="./index.html" class="nav-back zh">回主頁面</a>
+  <a href="./index.html" class="nav-back en">Back to Home</a>
+  <div class="nav-logo">風神匠股份有限公司</div>
+  <div class="lang-toggle">
+    <button class="lang-btn on" onclick="setLang('ja',this)">日本語</button>
+    <button class="lang-btn" onclick="setLang('zh',this)">繁體中文</button>
+    <button class="lang-btn" onclick="setLang('en',this)">English</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="./images/miya-hero.jpg" alt="wagyu" loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag">MIYAZAKI WAGYU</p>
+    <h1 class="hero-title" class="ja">宮崎牛</h1><h1 class="zh">宮崎和牛</h1><h1 class="en">Miyazaki
+Wagyu</h1>
+    <p class="hero-sub" class="ja">内閣総理大臣賞4大会連続受賞。日本が世界に誇る最高峰のブランド牛。</p><p class="zh">連續四屆榮獲內閣總理大臣賞。日本引以為傲、世界最高峰的和牛品牌。</p><p class="en">4 consecutive Prime Minister's Awards. Japan's proudest wagyu brand, recognized worldwide.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">4連覇</div>
+        <div class="stat-label" class="ja">内閣総理大臣賞</div><div class="zh">內閣總理大臣賞</div><div class="en">Prime Minister's Award</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">A5</div>
+        <div class="stat-label" class="ja">最高等級</div><div class="zh">最高等級</div><div class="en">Top Grade</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">世界</div>
+        <div class="stat-label" class="ja">トップシェフが選ぶ</div><div class="zh">頂尖主廚的首選</div><div class="en">Top Chefs' Choice</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAME -->
+<section class="section fame-bg">
+  <div class="container">
+    <p class="sec-label" class="ja">日本での知名度・実績</p><p class="zh">日本知名度與實績</p><p class="en">JAPAN REPUTATION</p>
+    <h2 class="sec-title" class="ja">宮崎牛が日本最高峰と<br>呼ばれる理由。</h2><h2 class="zh">宮崎和牛被稱為<br>日本最高峰的原因。</h2><h2 class="en">Why Miyazaki Wagyu is Called<br>Japan's Finest.</h2>
+    <div class="gold-line"></div>
+    <div class="fame-grid">
+      <div class="fame-stat">
+        <div class="fame-stat-num">4連覇</div>
+        <p class="fame-stat-label" class="ja">内閣総理大臣賞 4大会連続受賞<br>日本最高峰の和牛品評会「全国和牛能力共進会」で4大会連続最高賞を受賞。この記録は日本の和牛史上前例のない快挙。</p><p class="zh">內閣總理大臣賞連續四屆獲獎<br>在日本最高規格的和牛評鑑會上連續四屆獲得最高獎，這是日本和牛史上前所未有的壯舉。</p><p class="en">Prime Minister's Award — 4 Consecutive Wins<br>The only wagyu to win the top honor at Japan's National Wagyu Competition four consecutive times — an unprecedented achievement in wagyu history.</p>
+      </div>
+      <div class="fame-stat">
+        <div class="fame-stat-num">世界No.1</div>
+        <p class="fame-stat-label" class="ja">世界トップシェフが認める品質<br>ミシュランシェフをはじめ、世界中の一流シェフが最高の和牛として評価。その名は世界のグルメシーンを席巻している。</p><p class="zh">獲世界頂尖主廚認可的品質<br>包括米其林主廚在內的全球頂尖廚師，都將其評為最高級別的和牛，聲名享譽全球美食界。</p><p class="en">Recognized by the World's Top Chefs<br>From Michelin-starred chefs to the world's finest culinary talents, Miyazaki Wagyu is universally acclaimed as the pinnacle of premium beef.</p>
+      </div>
+    </div>
+    <p class="fame-text" class="ja">宮崎牛は全国和牛能力共進会で4大会連続内閣総理大臣賞を受賞した、日本が世界に誇る最高峰のブランド牛。宮崎県の温暖な気候と豊かな自然、農家の情熱が生み出す圧倒的な霜降りと豊かな風味は、世界中のトップシェフを魅了し続けています。</p><p class="zh">宮崎和牛在全國和牛能力共進會中連續四屆榮獲內閣總理大臣賞，是日本引以為傲、馳名世界的頂級和牛品牌。宮崎縣的溫暖氣候、豐富自然環境與農家的熱情，共同孕育出壓倒性的霜降紋理與豐富風味，持續吸引全球頂尖主廚的青睞。</p><p class="en">Miyazaki Wagyu has won the Prime Minister's Award at Japan's National Wagyu Competition four consecutive times, making it Japan's proudest and most internationally renowned wagyu brand. Its extraordinary marbling and rich flavor, born from Miyazaki's warm climate, rich nature, and passionate farmers, continue to captivate the world's top chefs.</p>
+  </div>
+</section>
+
+<!-- MARBLING FEATURE -->
+<section class="section">
+  <div class="container">
+    <p class="sec-label" class="ja">品種の特徴</p><p class="zh">品種特徵</p><p class="en">CHARACTERISTICS</p>
+    <h2 class="sec-title" class="ja">宮崎牛が世界を<br>魅了する理由。</h2><h2 class="zh">宮崎和牛征服世界的理由。</h2><h2 class="en">Why Miyazaki Wagyu<br>Conquers the World.</h2>
+    <div class="gold-line"></div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3 class="feature-title" class="ja">圧倒的な霜降り</h3><h3 class="zh">壓倒性的霜降紋理</h3><h3 class="en">Unrivaled Marbling</h3>
+        <p class="feature-desc" class="ja">BMS12の極致を追求した霜降りは、見た目の美しさと口溶けの良さが他の追随を許さない。</p><p class="zh">追求BMS12極致的霜降，在視覺美感與入口即化的口感上，無與倫比。</p><p class="en">Pursuing the ultimate BMS12 marbling, its visual beauty and melt-in-the-mouth texture stand in a class of their own.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3 class="feature-title" class="ja">深い旨みと風味</h3><h3 class="zh">深邃的鮮味與風味</h3><h3 class="en">Deep Umami & Richness</h3>
+        <p class="feature-desc" class="ja">宮崎の豊かな自然と独自の飼育法が生む、複雑で深みのある旨みと芳醇な香り。</p><p class="zh">宮崎豐富的自然環境與獨特的飼育方式，造就複雜而深邃的鮮味與芳醇香氣。</p><p class="en">Miyazaki's rich natural environment and unique breeding methods create a complex, deep umami and aromatic richness unlike any other.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3 class="feature-title" class="ja">世界基準の品質管理</h3><h3 class="zh">世界標準的品質管理</h3><h3 class="en">World-Standard Quality Control</h3>
+        <p class="feature-desc" class="ja">厳格な品質管理のもと生産される宮崎牛は、国際的な食品安全基準を満たす最高品質。</p><p class="zh">在嚴格品質管理下生產的宮崎和牛，符合國際食品安全標準，品質無可挑剔。</p><p class="en">Produced under strict quality management, Miyazaki Wagyu meets international food safety standards with uncompromising quality.</p>
+      </div>
+    </div>
+    <div class="marbling-wrap">
+      <img src="./images/miya-marbling.jpg" alt="marbling" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- BMS -->
+<section class="section bms-bg">
+  <div class="container">
+    <p class="sec-label" class="ja">霜降りグレード</p><p class="zh">霜降等級</p><p class="en">MARBLING GRADE</p>
+    <h2 class="sec-title" class="ja">世界最高峰の霜降り、その証明。</h2><h2 class="zh">世界最高峰霜降的證明。</h2><h2 class="en">Proof of the World's Finest Marbling.</h2>
+    <div class="gold-line"></div>
+    <div class="bms-wrap">
+      <img src="./images/bms-grade.jpg" alt="BMS Grade Comparison" loading="lazy">
+    </div>
+    <p class="bms-note">
+      <span class="bms-highlight ja">風神匠が提供するのは最高グレードのみ。</span>
+      <span class="bms-highlight zh">風神匠只提供最高等級。</span>
+      <span class="bms-highlight en">Fujin Takumi delivers only the highest grade.</span>
+      <br>
+      <p class="ja">宮崎牛のBMSは最高値12に近い水準を誇る。風神匠が台湾にお届けするのは最高グレードの宮崎牛のみです。</p><p class="zh">宮崎和牛的BMS接近最高值12的水準。風神匠送達台灣的只有最高等級的宮崎和牛。</p><p class="en">Miyazaki Wagyu boasts BMS scores approaching the maximum of 12. Fujin Takumi delivers only the highest grade Miyazaki Wagyu to Taiwan.</p>
+    </p>
+  </div>
+</section>
+
+<!-- CUTS -->
+<section class="section">
+  <div class="container">
+    <p class="sec-label" class="ja">主要部位</p><p class="zh">主要部位</p><p class="en">PREMIUM CUTS</p>
+    <h2 class="sec-title" class="ja">宮崎牛の各部位が、<br>料理の価値を高める。</h2><h2 class="zh">宮崎和牛的各部位，<br>提升料理的價值。</h2><h2 class="en">Miyazaki Wagyu Cuts That<br>Elevate Every Dish.</h2>
+    <div class="gold-line"></div>
+    <div class="cuts-grid">
+      <div class="cut-img-wrap">
+        <img src="./images/miya-cuts.jpg" alt="cuts" loading="lazy">
+      </div>
+      <div class="cuts-list">
+        <div class="cut-item">
+          <h3 class="cut-name">サーロイン / Sirloin</h3>
+          <p class="cut-desc" class="ja">宮崎牛最大の魅力が詰まった部位。豊かな霜降りと深い旨みのバランスが絶妙。</p><p class="zh">最能展現宮崎和牛魅力的部位。豐富的霜降與深邃的鮮味達到絕妙平衡。</p><p class="en">The cut that best captures Miyazaki Wagyu's greatest appeal — a perfect balance of rich marbling and deep umami.</p>
+        </div>
+        <div class="cut-item">
+          <h3 class="cut-name">リブアイ / Ribeye</h3>
+          <p class="cut-desc" class="ja">最も霜降りが豊富で濃厚な旨みを持つ部位。鉄板焼き・焼肉で真価を発揮。</p><p class="zh">霜降最豐富、鮮味最濃郁的部位，在鐵板燒與燒肉中展現真正價值。</p><p class="en">The richest marbling and most intense flavor. Reveals its true value in teppanyaki and yakiniku.</p>
+        </div>
+        <div class="cut-item">
+          <h3 class="cut-name">ヒレ / Tenderloin</h3>
+          <p class="cut-desc" class="ja">宮崎牛の繊細な旨みが凝縮した最も柔らかい部位。コース料理の主役として最適。</p><p class="zh">凝聚宮崎和牛細膩鮮味的最柔嫩部位，是套餐主菜的最佳主角。</p><p class="en">The most tender cut, concentrating Miyazaki Wagyu's delicate umami. Perfect as the star of a fine dining course.</p>
+        </div>
+        <div class="cut-item">
+          <h3 class="cut-name">ザブトン / Chuck Flap</h3>
+          <p class="cut-desc" class="ja">希少部位の中でも特に人気が高い。豊かな霜降りと独特の甘みが特徴。</p><p class="zh">稀少部位中人氣最高，以豐富的霜降與獨特的甜味為特徵。</p><p class="en">The most popular among rare cuts, characterized by rich marbling and a unique sweetness.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COOKED -->
+<section class="section fame-bg">
+  <div class="container">
+    <p class="sec-label" class="ja">仕上がり</p><p class="zh">料理呈現</p><p class="en">CULINARY EXCELLENCE</p>
+    <h2 class="sec-title" class="ja">世界が認める宮崎牛の<br>圧倒的な存在感。</h2><h2 class="zh">獲世界認可的宮崎和牛<br>壓倒性的存在感。</h2><h2 class="en">Miyazaki Wagyu's Overwhelming<br>Presence in the Kitchen.</h2>
+    <div class="gold-line"></div>
+    <div class="cooked-wrap">
+      <img src="./images/miya-cooked.jpg" alt="cooked wagyu" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- LANDSCAPE -->
+<section class="section">
+  <div class="container">
+    <p class="sec-label" class="ja">産地環境</p><p class="zh">產地環境</p><p class="en">ORIGIN</p>
+    <h2 class="sec-title" class="ja">日本の大自然が育てた、<br>世界最高峰の和牛。</h2><h2 class="zh">日本大自然孕育的<br>世界最高峰和牛。</h2><h2 class="en">Japan's Great Nature Raises<br>the World's Finest Wagyu.</h2>
+    <div class="gold-line"></div>
+    <div class="landscape-grid">
+      <div class="landscape-img"><img src="./images/landscape-hero.jpg" alt="landscape" loading="lazy"></div>
+      <div class="landscape-img"><img src="./images/landscape-sub.jpg" alt="landscape" loading="lazy"></div>
+    </div>
+    <p class="fame-text" class="ja">宮崎県の温暖な気候と豊かな自然環境、農家の代々受け継がれた飼育技術が、世界最高峰の宮崎牛を生み出しています。</p><p class="zh">宮崎縣的溫暖氣候、豐富的自然環境，以及世代傳承的飼育技術，共同孕育出世界最高峰的宮崎和牛。</p><p class="en">Miyazaki's warm climate, rich natural environment, and generations of inherited breeding expertise together create the world's finest wagyu.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-bg">
+  <div class="container">
+    <div class="cta-inner">
+      <p class="cta-text" class="ja">宮崎牛の仕入れについてご相談ください。<br>最適なカット・数量・スケジュールをご提案いたします。</p><p class="zh">歡迎諮詢宮崎和牛採購事宜。<br>我們將為您提供最適合的部位、數量與時程建議。</p><p class="en">Contact us to discuss Miyazaki Wagyu sourcing.<br>We'll recommend the best cuts, volumes, and schedules for your needs.</p>
+      <a href="./index.html#contact" class="btn-primary ja">お問い合わせはこちら</a>
+      <a href="./index.html#contact" class="btn-primary zh">立即諮詢</a>
+      <a href="./index.html#contact" class="btn-primary en">Contact Us</a>
+      <a href="./index.html" class="btn-ghost ja">メインページへ戻る</a>
+      <a href="./index.html" class="btn-ghost zh">返回主頁面</a>
+      <a href="./index.html" class="btn-ghost en">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">風神匠股份有限公司</div>
+  <div class="footer-copy">© 2026 風神匠股份有限公司. All Rights Reserved.</div>
+</footer>
+
+<script>
+function setLang(lang,btn){
+  document.body.dataset.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>{b.style.background='transparent';b.style.color='var(--td)';b.style.fontWeight='300';});
+  btn.style.background='var(--gold)';btn.style.color='var(--bg)';btn.style.fontWeight='500';
+  document.documentElement.lang=lang==='ja'?'ja':lang==='zh'?'zh-TW':'en';
+  document.querySelectorAll('[data-ph-'+lang+']').forEach(el=>{el.placeholder=el.getAttribute('data-ph-'+lang);});
+}
+</script>
+</body>
+</html>
