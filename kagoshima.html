@@ -277,9 +277,8 @@ Black Wagyu</h1>
     <p class="sec-label" class="ja">産地環境</p><p class="zh">產地環境</p><p class="en">ORIGIN</p>
     <h2 class="sec-title" class="ja">豊かな自然が、最高の和牛を育てる。</h2><h2 class="zh">豐富的自然環境，孕育最頂級的和牛。</h2><h2 class="en">A Rich Natural Environment<br>Raises the Finest Wagyu.</h2>
     <div class="gold-line"></div>
-    <div class="landscape-grid">
-      <div class="landscape-img"><img src="./images/landscape-hero.jpg" alt="landscape" loading="lazy"></div>
-      <div class="landscape-img"><img src="./images/landscape-sub.jpg" alt="landscape" loading="lazy"></div>
+    <div style="margin-top:40px;height:420px;border:.5px solid var(--gold-d);overflow:hidden;">
+      <img src="./images/kago-landscape.jpg" alt="landscape" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
     </div>
     <p class="fame-text" class="ja">鹿児島県の温暖な気候と広大な草地、清らかな水が生み出す最高の飼育環境。自然の恵みが鹿児島黒毛和牛の卓越した品質を育んでいます。</p><p class="zh">鹿兒島縣溫暖的氣候、廣闊的草地與清澈的水源，創造出最佳的飼育環境，孕育出鹿兒島黑毛和牛的卓越品質。</p><p class="en">Kagoshima's warm climate, expansive pastures, and pure water create the ideal breeding environment that nurtures the exceptional quality of Kagoshima Black Wagyu.</p>
   </div>
@@ -306,33 +305,26 @@ Black Wagyu</h1>
 </footer>
 
 <script>
-// 言語ごとに要素を直接表示/非表示で制御（確実な方式）
-function setLang(lang, btn) {
-  // 全言語要素を一旦非表示
-  document.querySelectorAll('.ja,.zh,.en').forEach(function(el) {
-    el.style.display = 'none';
+function setLang(lang,btn){
+  ['ja','zh','en'].forEach(function(l){
+    document.querySelectorAll('.'+l).forEach(function(el){
+      el.style.display = (l===lang) ? 'block' : 'none';
+    });
   });
-  // 選択言語のみ表示
-  document.querySelectorAll('.' + lang).forEach(function(el) {
-    el.style.display = 'block';
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.style.background='transparent';
+    b.style.color='var(--td)';
+    b.style.fontWeight='300';
   });
-  // ボタンのスタイル更新
-  document.querySelectorAll('.lang-btn').forEach(function(b) {
-    b.style.background = 'transparent';
-    b.style.color = 'var(--td)';
-    b.style.fontWeight = '300';
-  });
-  btn.style.background = 'var(--gold)';
-  btn.style.color = 'var(--bg)';
-  btn.style.fontWeight = '500';
+  btn.style.background='var(--gold)';
+  btn.style.color='var(--bg)';
+  btn.style.fontWeight='500';
 }
-
-// ページ読み込み時：日本語以外を非表示
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.zh,.en').forEach(function(el) {
-    el.style.display = 'none';
+window.onload=function(){
+  document.querySelectorAll('.zh,.en').forEach(function(el){
+    el.style.display='none';
   });
-});
+};
 </script>
 </body>
 </html>
