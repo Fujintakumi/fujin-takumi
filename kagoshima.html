@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>鹿児島黒毛和牛 | 風神匠股份有限公司</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0B1A30;--surface:#0F2244;--surface2:#162A54;
@@ -21,106 +20,73 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdr
 .nav-back::before{content:'←';font-size:14px;}
 .nav-logo{font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gold);letter-spacing:3px;}
 .lang-toggle{display:flex;border:.5px solid var(--gold-d);border-radius:20px;overflow:hidden;}
-.lang-btn{padding:4px 12px;font-size:11px;font-family:'Noto Sans JP',sans-serif;cursor:pointer;background:transparent;color:var(--td);border:none;letter-spacing:1px;transition:all .2s;}
+.lang-btn{padding:4px 12px;font-size:11px;font-family:'Noto Sans JP',sans-serif;cursor:pointer;background:transparent;color:var(--td);border:none;letter-spacing:1px;}
 .lang-btn.on{background:var(--gold);color:var(--bg);font-weight:500;}
-
-/* HERO */
 .hero{height:100vh;position:relative;overflow:hidden;}
-.hero-img{position:absolute;inset:0;object-fit:cover;object-position:center;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,26,48,0.88) 45%,rgba(11,26,48,0.4) 100%);}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,26,48,0.9) 45%,rgba(11,26,48,0.4) 100%);}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 80px;max-width:700px;}
 .hero-tag{font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:20px;}
-.hero-title{font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.2;letter-spacing:3px;margin-bottom:20px;}
+.hero-title{font-size:clamp(34px,5vw,64px);font-weight:300;line-height:1.2;letter-spacing:3px;margin-bottom:20px;}
 .hero-sub{font-family:'Noto Sans JP',sans-serif;font-size:15px;color:var(--td);line-height:2;max-width:480px;margin-bottom:36px;}
 .hero-stats{display:flex;gap:40px;}
 .stat{text-align:center;}
 .stat-num{font-size:36px;font-weight:300;color:var(--gold);letter-spacing:-1px;line-height:1;}
 .stat-label{font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:2px;color:var(--td);margin-top:6px;}
-
-/* SECTION */
 .section{padding:88px 40px;}
 .container{max-width:1080px;margin:0 auto;}
 .sec-label{font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
 .sec-label::before{content:'';width:24px;height:.5px;background:var(--gold);}
 .sec-title{font-size:clamp(22px,3vw,36px);font-weight:300;letter-spacing:2px;margin-bottom:14px;line-height:1.4;}
 .gold-line{width:44px;height:.5px;background:var(--gold);margin-bottom:36px;}
-
-/* FAME */
 .fame-bg{background:var(--surface);}
 .fame-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
 .fame-stat{background:var(--bg);padding:40px 32px;border:.5px solid var(--gold-d);}
 .fame-stat-num{font-size:52px;font-weight:300;color:var(--gold);letter-spacing:-2px;line-height:1;margin-bottom:8px;}
 .fame-stat-label{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--td);line-height:1.9;}
 .fame-text{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;font-weight:300;line-height:2.2;color:var(--td);margin-top:40px;}
-
-/* FEATURE */
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;}
 .feature-card{background:var(--surface);padding:36px 28px;border:.5px solid var(--gold-d);}
 .feature-icon{font-size:28px;margin-bottom:16px;}
 .feature-title{font-size:16px;font-weight:400;color:var(--gold);letter-spacing:1px;margin-bottom:12px;}
 .feature-desc{font-family:'Noto Sans JP',sans-serif;font-size:13.5px;font-weight:300;line-height:2;color:var(--td);}
-
-/* MARBLING IMG */
 .marbling-wrap{margin-top:40px;height:400px;overflow:hidden;border:.5px solid var(--gold-d);}
-
-/* BMS */
 .bms-bg{background:var(--surface);}
 .bms-wrap{margin-top:40px;border:.5px solid var(--gold-d);overflow:hidden;}
 .bms-wrap img{height:320px;object-fit:cover;}
 .bms-note{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--td);margin-top:20px;line-height:2;text-align:center;}
 .bms-highlight{color:var(--gold);font-size:18px;font-weight:400;}
-
-/* CUTS */
 .cuts-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:start;}
 .cut-img-wrap{height:420px;border:.5px solid var(--gold-d);overflow:hidden;}
 .cuts-list{display:flex;flex-direction:column;gap:20px;}
 .cut-item{padding:20px 24px;background:var(--surface);border:.5px solid var(--gold-d);border-left:2px solid var(--gold);}
 .cut-name{font-size:16px;font-weight:400;letter-spacing:1px;margin-bottom:8px;}
 .cut-desc{font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:300;line-height:1.9;color:var(--td);}
-
-/* COOKED */
 .cooked-wrap{margin-top:40px;height:480px;border:.5px solid var(--gold-d);overflow:hidden;}
-
-/* LANDSCAPE */
-.landscape-bg{background:var(--surface);}
-.landscape-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
-.landscape-img{height:340px;overflow:hidden;border:.5px solid var(--gold-d);}
-
-/* CTA */
+.landscape-wrap{margin-top:40px;height:460px;border:.5px solid var(--gold-d);overflow:hidden;}
 .cta-bg{background:var(--surface);}
 .cta-inner{text-align:center;padding:60px 0;}
-.btn-primary{display:inline-block;padding:16px 52px;background:var(--gold);color:var(--bg);font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:3px;text-decoration:none;font-weight:400;transition:opacity .2s;}
-.btn-primary:hover{opacity:.82;}
-.btn-ghost{display:inline-block;padding:15px 52px;border:.5px solid var(--gold-b);color:var(--gold-b);font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:3px;text-decoration:none;margin-left:16px;transition:all .2s;}
+.btn-primary{display:inline-block;padding:16px 52px;background:var(--gold);color:var(--bg);font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:3px;text-decoration:none;font-weight:400;}
+.btn-ghost{display:inline-block;padding:15px 52px;border:.5px solid var(--gold-b);color:var(--gold-b);font-family:'Noto Sans JP',sans-serif;font-size:14px;letter-spacing:3px;text-decoration:none;margin-left:16px;}
 .cta-text{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;color:var(--td);margin-bottom:36px;line-height:2;}
-
-/* FOOTER */
 footer{background:var(--surface);border-top:.5px solid var(--gold-d);padding:40px;display:flex;justify-content:space-between;align-items:center;}
 .footer-logo{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--gold);letter-spacing:3px;opacity:.7;}
 .footer-copy{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--td);}
-
-/* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 18px;}
   .hero-content{padding:0 24px;}
-  .hero-title{font-size:clamp(28px,8vw,44px);}
-  .hero-stats{gap:20px;}
-  .stat-num{font-size:28px;}
+  .hero-title{font-size:clamp(26px,8vw,40px);}
+  .hero-stats{gap:20px;}.stat-num{font-size:26px;}
   .section{padding:56px 18px;}
-  .fame-grid,.cuts-grid,.landscape-grid,.feature-grid{grid-template-columns:1fr;}
-  .marbling-wrap,.cooked-wrap{height:240px;}
+  .fame-grid,.cuts-grid,.feature-grid{grid-template-columns:1fr;}
+  .marbling-wrap,.cooked-wrap,.landscape-wrap{height:240px;}
   .cut-img-wrap{height:260px;}
-  .landscape-img{height:220px;}
-  .bms-wrap img{height:180px;}
+  .bms-wrap img{height:160px;}
   footer{flex-direction:column;gap:12px;text-align:center;}
 }
-
-/* LANG */
-/* 言語切替はJSで管理 */
 </style>
 </head>
 <body>
-
 <nav>
   <a href="./index.html" class="nav-back ja">メインページへ</a>
   <a href="./index.html" class="nav-back zh">回主頁面</a>
@@ -133,73 +99,101 @@ footer{background:var(--surface);border-top:.5px solid var(--gold-d);padding:40p
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <img class="hero-img" src="./images/kago-hero.jpg" alt="wagyu" loading="eager">
+  <img src="./images/kago-hero.jpg" alt="wagyu" loading="eager">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-tag">KAGOSHIMA BLACK WAGYU</p>
-    <h1 class="hero-title" class="ja">鹿児島黒毛和牛</h1><h1 class="zh">鹿兒島黑毛和牛</h1><h1 class="en">Kagoshima
-Black Wagyu</h1>
-    <p class="hero-sub" class="ja">日本最大の和牛産地から生まれる、きめ細やかな霜降りと上品な甘み。</p><p class="zh">來自日本最大和牛產地，以細膩霜降與高雅甜味著稱的頂級品牌。</p><p class="en">From Japan's largest wagyu producing region — exceptional marbling and elegant sweetness.</p>
+    <h1 class="hero-title ja">鹿児島黒毛和牛</h1>
+    <h1 class="hero-title zh">鹿兒島黑毛和牛</h1>
+    <h1 class="hero-title en">Kagoshima Black Wagyu</h1>
+    <p class="hero-sub ja">日本最大の和牛産地から生まれる、きめ細やかな霜降りと上品な甘み。</p>
+    <p class="hero-sub zh">來自日本最大和牛產地，以細膩霜降與高雅甜味著稱的頂級品牌。</p>
+    <p class="hero-sub en">From Japan's largest wagyu producing region — exceptional marbling and elegant sweetness.</p>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">No.1</div>
-        <div class="stat-label" class="ja">全国出荷頭数</div><div class="zh">全國出貨頭數</div><div class="en">National Shipment Volume</div>
+        <div class="stat-label ja">全国出荷頭数</div>
+        <div class="stat-label zh">全國出貨頭數</div>
+        <div class="stat-label en">National Shipment</div>
       </div>
       <div class="stat">
         <div class="stat-num">A5</div>
-        <div class="stat-label" class="ja">最高等級</div><div class="zh">最高等級</div><div class="en">Top Grade</div>
+        <div class="stat-label ja">最高等級</div>
+        <div class="stat-label zh">最高等級</div>
+        <div class="stat-label en">Top Grade</div>
       </div>
       <div class="stat">
         <div class="stat-num">4回</div>
-        <div class="stat-label" class="ja">全国和牛共進会 最高賞</div><div class="zh">全國和牛共進會最高獎</div><div class="en">Prime Minister's Award</div>
+        <div class="stat-label ja">全国和牛共進会 最高賞</div>
+        <div class="stat-label zh">全國共進會最高獎</div>
+        <div class="stat-label en">Prime Minister's Award</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAME -->
 <section class="section fame-bg">
   <div class="container">
-    <p class="sec-label" class="ja">日本での知名度・実績</p><p class="zh">日本知名度與實績</p><p class="en">JAPAN REPUTATION</p>
-    <h2 class="sec-title" class="ja">なぜ鹿児島黒毛和牛は<br>日本のトップブランドなのか。</h2><h2 class="zh">為何鹿兒島黑毛和牛<br>是日本頂級品牌。</h2><h2 class="en">Why Kagoshima Black Wagyu<br>is Japan's Top Wagyu Brand.</h2>
+    <p class="sec-label ja">日本での知名度・実績</p>
+    <p class="sec-label zh">日本知名度與實績</p>
+    <p class="sec-label en">JAPAN REPUTATION</p>
+    <h2 class="sec-title ja">なぜ鹿児島黒毛和牛は<br>日本のトップブランドなのか。</h2><h2 class="sec-title zh">為何鹿兒島黑毛和牛被稱為<br>日本最高峰。</h2><h2 class="sec-title en">Why Kagoshima Black Wagyu is Called<br>Japan's Finest.</h2>
     <div class="gold-line"></div>
     <div class="fame-grid">
       <div class="fame-stat">
         <div class="fame-stat-num">No.1</div>
-        <p class="fame-stat-label" class="ja">全国一位の出荷頭数<br>年間出荷頭数は全国最多を誇り、日本の和牛市場を牽引するトップブランド。</p><p class="zh">全國第一出貨頭數<br>年度出貨頭數全國最多，是引領日本和牛市場的頂級品牌。</p><p class="en">Largest shipment volume in Japan<br>Leading the Japanese wagyu market with the highest annual shipment numbers nationwide.</p>
+        <p class="fame-stat-label ja">全国一位の出荷頭数<br>年間出荷頭数は全国最多を誇り、日本の和牛市場を牽引するトップブランド。</p>
+        <p class="fame-stat-label zh">全國第一出貨頭數<br>年度出貨頭數全國最多，是引領日本和牛市場的頂級品牌。</p>
+        <p class="fame-stat-label en">Largest shipment in Japan<br>Leading the Japanese wagyu market with the highest annual shipment numbers nationwide.</p>
       </div>
       <div class="fame-stat">
         <div class="fame-stat-num">4回</div>
-        <p class="fame-stat-label" class="ja">全国和牛能力共進会 最高賞受賞<br>日本最高峰の和牛品評会で最高位を獲得。その品質は全国で認められている。</p><p class="zh">全國和牛能力共進會最高獎<br>在日本最高規格的和牛評鑑會中獲得最高位，品質獲全國認可。</p><p class="en">National Wagyu Competition — Top Award<br>Awarded the highest honor at Japan's most prestigious wagyu competition, recognized nationwide for its exceptional quality.</p>
+        <p class="fame-stat-label ja">全国和牛能力共進会 最高賞受賞<br>日本最高峰の和牛品評会で最高位を獲得。その品質は全国で認められている。</p>
+        <p class="fame-stat-label zh">全國和牛能力共進會最高獎<br>在日本最高規格的和牛評鑑會中獲得最高位，品質獲全國認可。</p>
+        <p class="fame-stat-label en">National Wagyu Competition — Top Award<br>Awarded the highest honor at Japan's most prestigious wagyu competition.</p>
       </div>
     </div>
-    <p class="fame-text" class="ja">鹿児島県は温暖な気候と豊かな自然に恵まれた、日本最大の和牛産地。全国和牛能力共進会でも最高位を獲得した実績を持ち、日本国内の有名レストランやホテルでも広く採用されている最高級ブランドです。</p><p class="zh">鹿兒島縣擁有溫暖氣候與豐富自然，是日本最大的和牛產地。在全國和牛能力共進會中屢獲殊榮，被日本國內知名餐廳與飯店廣泛採用的頂級品牌。</p><p class="en">Kagoshima Prefecture, blessed with a warm climate and rich natural environment, is Japan's largest wagyu producing region. Widely adopted by Japan's top restaurants and hotels, Kagoshima Black Wagyu is a premium brand with a proven track record of excellence.</p>
+    <p class="fame-text ja">鹿児島県は温暖な気候と豊かな自然に恵まれた、日本最大の和牛産地。全国和牛能力共進会でも最高位を獲得した実績を持ち、日本国内の有名レストランやホテルでも広く採用されている最高級ブランドです。</p>
+    <p class="fame-text zh">鹿兒島縣擁有溫暖氣候與豐富自然，是日本最大的和牛產地。在全國和牛能力共進會中屢獲殊榮，被日本國內知名餐廳與飯店廣泛採用的頂級品牌。</p>
+    <p class="fame-text en">Kagoshima, Japan's largest wagyu producing region, is blessed with a warm climate and rich nature. Widely adopted by top restaurants and hotels in Japan.</p>
   </div>
 </section>
 
-<!-- MARBLING FEATURE -->
 <section class="section">
   <div class="container">
-    <p class="sec-label" class="ja">品種の特徴</p><p class="zh">品種特徵</p><p class="en">CHARACTERISTICS</p>
-    <h2 class="sec-title" class="ja">鹿児島黒毛和牛が<br>台湾の食卓を変える理由。</h2><h2 class="zh">鹿兒島黑毛和牛<br>改變台灣飲食的理由。</h2><h2 class="en">Why Kagoshima Black Wagyu<br>Transforms Taiwan's Dining Scene.</h2>
+    <p class="sec-label ja">品種の特徴</p>
+    <p class="sec-label zh">品種特徵</p>
+    <p class="sec-label en">CHARACTERISTICS</p>
+    <h2 class="sec-title ja">鹿児島黒毛和牛が台湾の食卓を変える理由。</h2><h2 class="sec-title zh">鹿兒島黑毛和牛改變台灣飲食的理由。</h2><h2 class="sec-title en">Why Kagoshima Black Wagyu Transforms Taiwan's Dining Scene.</h2>
     <div class="gold-line"></div>
     <div class="feature-grid">
       <div class="feature-card">
         <div class="feature-icon">✦</div>
-        <h3 class="feature-title" class="ja">きめ細やかな霜降り</h3><h3 class="zh">細膩的霜降紋理</h3><h3 class="en">Ultra-Fine Marbling</h3>
-        <p class="feature-desc" class="ja">温暖な気候と独自の飼育環境が生み出す、BMS10〜12の極上の霜降り。口の中でとろけるような食感が特徴です。</p><p class="zh">溫暖氣候與獨特飼育環境造就BMS10〜12的極致霜降，入口即化的口感令人難忘。</p><p class="en">BMS 10〜12 grade marbling created by Kagoshima's warm climate and unique breeding environment. Melts in your mouth with every bite.</p>
+        <h3 class="feature-title ja">きめ細やかな霜降り</h3>
+        <h3 class="feature-title zh">細膩的霜降紋理</h3>
+        <h3 class="feature-title en">Ultra-Fine Marbling</h3>
+        <p class="feature-desc ja">温暖な気候と独自の飼育環境が生み出す、BMS10〜12の極上の霜降り。口の中でとろけるような食感が特徴です。</p>
+        <p class="feature-desc zh">溫暖氣候與獨特飼育環境造就BMS10〜12的極致霜降，入口即化的口感令人難忘。</p>
+        <p class="feature-desc en">BMS 10〜12 grade marbling created by Kagoshima's warm climate. Melts in your mouth with every bite.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✦</div>
-        <h3 class="feature-title" class="ja">上品な甘みと風味</h3><h3 class="zh">高雅的甜味與風味</h3><h3 class="en">Elegant Sweetness & Flavor</h3>
-        <p class="feature-desc" class="ja">霜降りの脂が持つ独特の甘みと芳醇な香りは、シンプルな調理法でもその旨みが際立ちます。</p><p class="zh">霜降脂肪特有的甜味與芳醇香氣，即使簡單料理也能展現其鮮美滋味。</p><p class="en">The unique sweetness and rich aroma of the marbling fat shines even with simple preparation methods.</p>
+        <h3 class="feature-title ja">上品な甘みと風味</h3>
+        <h3 class="feature-title zh">高雅的甜味與風味</h3>
+        <h3 class="feature-title en">Elegant Sweetness</h3>
+        <p class="feature-desc ja">霜降りの脂が持つ独特の甘みと芳醇な香りは、シンプルな調理法でもその旨みが際立ちます。</p>
+        <p class="feature-desc zh">霜降脂肪特有的甜味與芳醇香氣，即使簡單料理也能展現其鮮美滋味。</p>
+        <p class="feature-desc en">The unique sweetness and rich aroma of the marbling fat shines even with simple preparation.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">✦</div>
-        <h3 class="feature-title" class="ja">安定した供給量</h3><h3 class="zh">穩定的供應量</h3><h3 class="en">Stable Supply Volume</h3>
-        <p class="feature-desc" class="ja">日本最大の産地として年間安定した出荷頭数を誇り、台湾への継続的な供給が可能です。</p><p class="zh">作為日本最大產地，年間出貨頭數穩定，能持續穩定供應台灣市場。</p><p class="en">As Japan's largest producing region, consistent annual shipment numbers ensure stable and reliable supply to Taiwan.</p>
+        <h3 class="feature-title ja">安定した供給量</h3>
+        <h3 class="feature-title zh">穩定的供應量</h3>
+        <h3 class="feature-title en">Stable Supply</h3>
+        <p class="feature-desc ja">日本最大の産地として年間安定した出荷頭数を誇り、台湾への継続的な供給が可能です。</p>
+        <p class="feature-desc zh">作為日本最大產地，年間出貨頭數穩定，能持續穩定供應台灣市場。</p>
+        <p class="feature-desc en">As Japan's largest producing region, we ensure stable and reliable supply to Taiwan.</p>
       </div>
     </div>
     <div class="marbling-wrap">
@@ -208,30 +202,33 @@ Black Wagyu</h1>
   </div>
 </section>
 
-<!-- BMS -->
 <section class="section bms-bg">
   <div class="container">
-    <p class="sec-label" class="ja">霜降りグレード</p><p class="zh">霜降等級</p><p class="en">MARBLING GRADE</p>
-    <h2 class="sec-title" class="ja">A5ランクの証明。</h2><h2 class="zh">A5等級的證明。</h2><h2 class="en">Proof of A5 Grade Quality.</h2>
+    <p class="sec-label ja">霜降りグレード</p>
+    <p class="sec-label zh">霜降等級</p>
+    <p class="sec-label en">MARBLING GRADE</p>
+    <h2 class="sec-title ja">A5ランクの証明。</h2><h2 class="sec-title zh">A5等級的證明。</h2><h2 class="sec-title en">Proof of A5 Grade Quality.</h2>
     <div class="gold-line"></div>
     <div class="bms-wrap">
-      <img src="./images/bms-grade.jpg" alt="BMS Grade Comparison" loading="lazy">
+      <img src="./images/bms-grade.jpg" alt="BMS Grade" loading="lazy">
     </div>
     <p class="bms-note">
       <span class="bms-highlight ja">風神匠が提供するのは最高グレードのみ。</span>
       <span class="bms-highlight zh">風神匠只提供最高等級。</span>
-      <span class="bms-highlight en">Fujin Takumi delivers only the highest grade.</span>
-      <br>
-      <p class="ja">風神匠が提供する鹿児島黒毛和牛は BMS 10〜12 を中心に厳選。風神匠が台湾にお届けするのは最高グレードのみです。</p><p class="zh">風神匠提供的鹿兒島黑毛和牛以BMS 10〜12為主嚴格篩選。送達台灣的只有最高等級。</p><p class="en">Fujin Takumi's Kagoshima Black Wagyu is strictly selected around BMS 10〜12. Only the highest grade is delivered to Taiwan.</p>
+      <span class="bms-highlight en">Fujin Takumi delivers only the highest grade.</span><br>
+      <span class="ja">風神匠が提供する鹿児島黒毛和牛は BMS 10〜12 を中心に厳選。最高グレードのみを台湾にお届けします。</span>
+      <span class="zh">風神匠提供的鹿兒島黑毛和牛以BMS 10〜12為主嚴格篩選。只有最高等級送達台灣。</span>
+      <span class="en">Fujin Takumi's Kagoshima Black Wagyu is strictly selected around BMS 10〜12. Only the highest grade is delivered to Taiwan.</span>
     </p>
   </div>
 </section>
 
-<!-- CUTS -->
 <section class="section">
   <div class="container">
-    <p class="sec-label" class="ja">主要部位</p><p class="zh">主要部位</p><p class="en">PREMIUM CUTS</p>
-    <h2 class="sec-title" class="ja">シェフが愛する、鹿児島黒毛和牛の各部位。</h2><h2 class="zh">主廚鍾愛的鹿兒島黑毛和牛各部位。</h2><h2 class="en">Chef's Favorite Cuts from Kagoshima Black Wagyu.</h2>
+    <p class="sec-label ja">主要部位</p>
+    <p class="sec-label zh">主要部位</p>
+    <p class="sec-label en">PREMIUM CUTS</p>
+    <h2 class="sec-title ja">シェフが愛する、鹿児島黒毛和牛の各部位。</h2><h2 class="sec-title zh">主廚鍾愛的鹿兒島黑毛和牛各部位。</h2><h2 class="sec-title en">Chef's Favorite Cuts from Kagoshima Black Wagyu.</h2>
     <div class="gold-line"></div>
     <div class="cuts-grid">
       <div class="cut-img-wrap">
@@ -240,30 +237,39 @@ Black Wagyu</h1>
       <div class="cuts-list">
         <div class="cut-item">
           <h3 class="cut-name">サーロイン / Sirloin</h3>
-          <p class="cut-desc" class="ja">霜降りと赤身のバランスが最も美しい部位。ステーキの王様として世界中のシェフに愛用される。</p><p class="zh">霜降與赤身比例最完美的部位，被全球主廚奉為牛排之王。</p><p class="en">The most perfectly balanced cut of marbling and lean meat. Beloved by chefs worldwide as the King of Steaks.</p>
+          <p class="cut-desc ja">霜降りと赤身のバランスが最も美しい部位。ステーキの王様として世界中のシェフに愛用される。</p>
+          <p class="cut-desc zh">霜降與赤身比例最完美的部位，被全球主廚奉為牛排之王。</p>
+          <p class="cut-desc en">The most perfectly balanced cut. Beloved by chefs worldwide as the King of Steaks.</p>
         </div>
         <div class="cut-item">
           <h3 class="cut-name">リブアイ / Ribeye</h3>
-          <p class="cut-desc" class="ja">最も濃厚な霜降りと豊かな旨みを持つ。焼肉・鉄板焼きで圧倒的な存在感を放つ。</p><p class="zh">霜降最豐富、鮮味最濃郁的部位，在燒肉與鐵板燒中展現壓倒性的存在感。</p><p class="en">The richest marbling and most intense flavor. Commands attention in yakiniku and teppanyaki.</p>
+          <p class="cut-desc ja">最も濃厚な霜降りと豊かな旨みを持つ。焼肉・鉄板焼きで圧倒的な存在感を放つ。</p>
+          <p class="cut-desc zh">霜降最豐富、鮮味最濃郁的部位，在燒肉與鐵板燒中展現壓倒性的存在感。</p>
+          <p class="cut-desc en">The richest marbling and most intense flavor. Commands attention in yakiniku and teppanyaki.</p>
         </div>
         <div class="cut-item">
           <h3 class="cut-name">ヒレ / Tenderloin</h3>
-          <p class="cut-desc" class="ja">最も柔らかい部位。脂が少なく上品な風味。コース料理のメインとして最適。</p><p class="zh">最柔嫩的部位，脂肪少而風味高雅，是套餐主菜的最佳選擇。</p><p class="en">The most tender cut, lean and elegantly flavored. Perfect as a main course in fine dining.</p>
+          <p class="cut-desc ja">最も柔らかい部位。脂が少なく上品な風味。コース料理のメインとして最適。</p>
+          <p class="cut-desc zh">最柔嫩的部位，脂肪少而風味高雅，是套餐主菜的最佳選擇。</p>
+          <p class="cut-desc en">The most tender cut, lean and elegantly flavored. Perfect as a main course in fine dining.</p>
         </div>
         <div class="cut-item">
           <h3 class="cut-name">カルビ / Short Rib</h3>
-          <p class="cut-desc" class="ja">旨みが濃縮された部位。焼肉として提供することでその魅力が最大限に発揮される。</p><p class="zh">鮮味濃縮的部位，作為燒肉料理時能最大限度地展現其魅力。</p><p class="en">Rich in concentrated umami. Best experienced as yakiniku, where its full flavor potential is unleashed.</p>
+          <p class="cut-desc ja">旨みが濃縮された部位。焼肉として提供することでその魅力が最大限に発揮される。</p>
+          <p class="cut-desc zh">鮮味濃縮的部位，作為燒肉料理時能最大限度地展現其魅力。</p>
+          <p class="cut-desc en">Rich in concentrated umami. Best experienced as yakiniku.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COOKED -->
 <section class="section fame-bg">
   <div class="container">
-    <p class="sec-label" class="ja">仕上がり</p><p class="zh">料理呈現</p><p class="en">CULINARY EXCELLENCE</p>
-    <h2 class="sec-title" class="ja">プロの厨房で輝く、鹿児島黒毛和牛。</h2><h2 class="zh">在專業廚房中閃耀的鹿兒島黑毛和牛。</h2><h2 class="en">Kagoshima Black Wagyu<br>in the Professional Kitchen.</h2>
+    <p class="sec-label ja">仕上がり</p>
+    <p class="sec-label zh">料理呈現</p>
+    <p class="sec-label en">CULINARY EXCELLENCE</p>
+    <h2 class="sec-title ja">プロの厨房で輝く、鹿児島黒毛和牛。</h2><h2 class="sec-title zh">在專業廚房中閃耀的鹿兒島黑毛和牛。</h2><h2 class="sec-title en">Kagoshima Black Wagyu in the Professional Kitchen.</h2>
     <div class="gold-line"></div>
     <div class="cooked-wrap">
       <img src="./images/kago-cooked.jpg" alt="cooked wagyu" loading="lazy">
@@ -271,24 +277,28 @@ Black Wagyu</h1>
   </div>
 </section>
 
-<!-- LANDSCAPE -->
 <section class="section">
   <div class="container">
-    <p class="sec-label" class="ja">産地環境</p><p class="zh">產地環境</p><p class="en">ORIGIN</p>
-    <h2 class="sec-title" class="ja">豊かな自然が、最高の和牛を育てる。</h2><h2 class="zh">豐富的自然環境，孕育最頂級的和牛。</h2><h2 class="en">A Rich Natural Environment<br>Raises the Finest Wagyu.</h2>
+    <p class="sec-label ja">産地環境</p>
+    <p class="sec-label zh">產地環境</p>
+    <p class="sec-label en">ORIGIN</p>
+    <h2 class="sec-title ja">豊かな自然が、最高の和牛を育てる。</h2><h2 class="sec-title zh">豐富的自然環境，孕育最頂級的和牛。</h2><h2 class="sec-title en">A Rich Natural Environment Raises the Finest Wagyu.</h2>
     <div class="gold-line"></div>
-    <div style="margin-top:40px;height:420px;border:.5px solid var(--gold-d);overflow:hidden;">
-      <img src="./images/kago-landscape.jpg" alt="landscape" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+    <div class="landscape-wrap">
+      <img src="./images/kago-landscape.jpg" alt="landscape" loading="lazy">
     </div>
-    <p class="fame-text" class="ja">鹿児島県の温暖な気候と広大な草地、清らかな水が生み出す最高の飼育環境。自然の恵みが鹿児島黒毛和牛の卓越した品質を育んでいます。</p><p class="zh">鹿兒島縣溫暖的氣候、廣闊的草地與清澈的水源，創造出最佳的飼育環境，孕育出鹿兒島黑毛和牛的卓越品質。</p><p class="en">Kagoshima's warm climate, expansive pastures, and pure water create the ideal breeding environment that nurtures the exceptional quality of Kagoshima Black Wagyu.</p>
+    <p class="fame-text ja">鹿児島県の温暖な気候と広大な草地、清らかな水が生み出す最高の飼育環境。桜島を望む雄大な自然が鹿児島黒毛和牛の卓越した品質を育んでいます。</p>
+    <p class="fame-text zh">鹿兒島縣溫暖的氣候、廣闊的草地、清澈的水源，以及桜島的壯闊自然，孕育出鹿兒島黑毛和牛的卓越品質。</p>
+    <p class="fame-text en">Kagoshima's warm climate, expansive pastures, pure water, and the majestic Sakurajima create the ideal environment for raising premium black wagyu.</p>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="section cta-bg">
   <div class="container">
     <div class="cta-inner">
-      <p class="cta-text" class="ja">鹿児島黒毛和牛の仕入れについてご相談ください。<br>最適なカット・数量・スケジュールをご提案いたします。</p><p class="zh">歡迎諮詢鹿兒島黑毛和牛採購事宜。<br>我們將為您提供最適合的部位、數量與時程建議。</p><p class="en">Contact us to discuss Kagoshima Black Wagyu sourcing.<br>We'll recommend the best cuts, volumes, and schedules for your needs.</p>
+      <p class="cta-text ja">鹿児島黒毛和牛の仕入れについてご相談ください。<br>最適なカット・数量・スケジュールをご提案いたします。</p>
+      <p class="cta-text zh">歡迎諮詢鹿兒島黑毛和牛採購事宜。<br>我們將為您提供最適合的部位、數量與時程建議。</p>
+      <p class="cta-text en">Contact us to discuss Kagoshima Black Wagyu sourcing.<br>We'll recommend the best cuts, volumes, and schedules.</p>
       <a href="./index.html#contact" class="btn-primary ja">お問い合わせはこちら</a>
       <a href="./index.html#contact" class="btn-primary zh">立即諮詢</a>
       <a href="./index.html#contact" class="btn-primary en">Contact Us</a>
@@ -308,23 +318,18 @@ Black Wagyu</h1>
 function setLang(lang,btn){
   ['ja','zh','en'].forEach(function(l){
     document.querySelectorAll('.'+l).forEach(function(el){
-      el.style.display = (l===lang) ? 'block' : 'none';
+      el.style.display=(l===lang)?'block':'none';
     });
   });
   document.querySelectorAll('.lang-btn').forEach(function(b){
-    b.style.background='transparent';
-    b.style.color='var(--td)';
-    b.style.fontWeight='300';
+    b.style.background='transparent';b.style.color='var(--td)';b.style.fontWeight='300';
   });
-  btn.style.background='var(--gold)';
-  btn.style.color='var(--bg)';
-  btn.style.fontWeight='500';
+  btn.style.background='var(--gold)';btn.style.color='var(--bg)';btn.style.fontWeight='500';
 }
 window.onload=function(){
-  document.querySelectorAll('.zh,.en').forEach(function(el){
-    el.style.display='none';
-  });
+  document.querySelectorAll('.zh,.en').forEach(function(el){el.style.display='none';});
 };
 </script>
+
 </body>
 </html>
